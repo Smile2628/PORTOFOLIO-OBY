@@ -1,0 +1,1199 @@
+cat > /var/www/html/index.html <<'EOF'
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmad Qurthuby | Portfolio</title>
+
+<style>
+
+\\\* {
+
+\&#x20;   margin: 0;
+
+\&#x20;   padding: 0;
+
+\&#x20;   box-sizing: border-box;
+
+\&#x20;   scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+\&#x20;   font-family: Arial, sans-serif;
+
+\&#x20;   background: #080b18;
+
+\&#x20;   color: white;
+
+\&#x20;   overflow-x: hidden;
+
+}
+
+
+
+body.light {
+
+\&#x20;   background: #edf1ff;
+
+\&#x20;   color: #17203b;
+
+}
+
+
+
+nav {
+
+\&#x20;   position: fixed;
+
+\&#x20;   top: 0;
+
+\&#x20;   width: 100%;
+
+\&#x20;   padding: 20px 8%;
+
+\&#x20;   display: flex;
+
+\&#x20;   justify-content: space-between;
+
+\&#x20;   align-items: center;
+
+\&#x20;   background: rgba(8,11,24,.8);
+
+\&#x20;   backdrop-filter: blur(15px);
+
+\&#x20;   z-index: 10;
+
+\&#x20;   border-bottom: 1px solid #ffffff15;
+
+}
+
+
+
+.logo {
+
+\&#x20;   font-size: 21px;
+
+\&#x20;   font-weight: bold;
+
+\&#x20;   color: #8b83ff;
+
+}
+
+
+
+nav a {
+
+\&#x20;   color: white;
+
+\&#x20;   text-decoration: none;
+
+\&#x20;   margin-left: 20px;
+
+\&#x20;   font-size: 14px;
+
+}
+
+
+
+nav a:hover {
+
+\&#x20;   color: #8b83ff;
+
+}
+
+
+
+button {
+
+\&#x20;   cursor: pointer;
+
+\&#x20;   border: none;
+
+}
+
+
+
+.hero {
+
+\&#x20;   min-height: 100vh;
+
+\&#x20;   display: flex;
+
+\&#x20;   flex-direction: column;
+
+\&#x20;   justify-content: center;
+
+\&#x20;   align-items: center;
+
+\&#x20;   text-align: center;
+
+\&#x20;   padding: 120px 20px 70px;
+
+\&#x20;   background:
+
+\&#x20;     radial-gradient(circle at 50% 40%, #4937a744, transparent 45%);
+
+}
+
+
+
+.profile {
+
+\&#x20;   width: 135px;
+
+\&#x20;   height: 135px;
+
+\&#x20;   border-radius: 50%;
+
+\&#x20;   display: grid;
+
+\&#x20;   place-items: center;
+
+\&#x20;   font-size: 43px;
+
+\&#x20;   font-weight: bold;
+
+\&#x20;   background: linear-gradient(135deg,#7667ff,#00d4ff);
+
+\&#x20;   box-shadow: 0 0 35px #7667ff88;
+
+\&#x20;   animation: float 3s ease-in-out infinite;
+
+\&#x20;   margin-bottom: 30px;
+
+}
+
+
+
+@keyframes float {
+
+\&#x20;   50% { transform: translateY(-15px); }
+
+}
+
+
+
+.tag {
+
+\&#x20;   color: #a9a2ff;
+
+\&#x20;   letter-spacing: 4px;
+
+\&#x20;   font-size: 12px;
+
+\&#x20;   margin-bottom: 20px;
+
+}
+
+
+
+h1 {
+
+\&#x20;   font-size: clamp(35px,7vw,68px);
+
+\&#x20;   margin-bottom: 15px;
+
+}
+
+
+
+h1 span {
+
+\&#x20;   background: linear-gradient(90deg,#8b83ff,#00d4ff);
+
+\&#x20;   background-clip: text;
+
+\&#x20;   color: transparent;
+
+}
+
+
+
+.subtitle {
+
+\&#x20;   color: #a8aecb;
+
+\&#x20;   line-height: 1.8;
+
+\&#x20;   max-width: 550px;
+
+}
+
+
+
+.actions {
+
+\&#x20;   margin-top: 30px;
+
+\&#x20;   display: flex;
+
+\&#x20;   gap: 15px;
+
+\&#x20;   flex-wrap: wrap;
+
+\&#x20;   justify-content: center;
+
+}
+
+
+
+.btn {
+
+\&#x20;   padding: 14px 25px;
+
+\&#x20;   border-radius: 30px;
+
+\&#x20;   background: linear-gradient(90deg,#7063ff,#00bfe9);
+
+\&#x20;   color: white;
+
+\&#x20;   font-weight: bold;
+
+\&#x20;   transition: .3s;
+
+}
+
+
+
+.btn:hover {
+
+\&#x20;   transform: translateY(-5px);
+
+\&#x20;   box-shadow: 0 0 25px #7063ff88;
+
+}
+
+
+
+.btn-outline {
+
+\&#x20;   background: transparent;
+
+\&#x20;   border: 1px solid #8178ff;
+
+\&#x20;   color: white;
+
+}
+
+
+
+section {
+
+\&#x20;   padding: 90px 8%;
+
+}
+
+
+
+.section-title {
+
+\&#x20;   text-align: center;
+
+\&#x20;   font-size: 32px;
+
+\&#x20;   margin-bottom: 40px;
+
+}
+
+
+
+.section-title span {
+
+\&#x20;   color: #8b83ff;
+
+}
+
+
+
+.about {
+
+\&#x20;   text-align: center;
+
+\&#x20;   max-width: 750px;
+
+\&#x20;   margin: auto;
+
+\&#x20;   color: #a8aecb;
+
+\&#x20;   line-height: 2;
+
+}
+
+
+
+.cards {
+
+\&#x20;   display: grid;
+
+\&#x20;   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+
+\&#x20;   gap: 22px;
+
+}
+
+
+
+.card {
+
+\&#x20;   padding: 30px;
+
+\&#x20;   border: 1px solid #8178ff44;
+
+\&#x20;   border-radius: 18px;
+
+\&#x20;   background: linear-gradient(145deg,#171b36,#101326);
+
+\&#x20;   transition: .3s;
+
+}
+
+
+
+.card:hover {
+
+\&#x20;   transform: translateY(-10px);
+
+\&#x20;   border-color: #8b83ff;
+
+\&#x20;   box-shadow: 0 10px 35px #5145ff22;
+
+}
+
+
+
+.card .emoji {
+
+\&#x20;   font-size: 35px;
+
+\&#x20;   margin-bottom: 18px;
+
+}
+
+
+
+.card h3 {
+
+\&#x20;   margin-bottom: 12px;
+
+\&#x20;   color: #a9a2ff;
+
+}
+
+
+
+.card p {
+
+\&#x20;   color: #a8aecb;
+
+\&#x20;   line-height: 1.7;
+
+\&#x20;   font-size: 14px;
+
+}
+
+
+
+/\\\* BAGIAN SERTIFIKAT \\\*/
+
+.certificate-grid {
+
+\&#x20;   display: grid;
+
+\&#x20;   grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+
+\&#x20;   gap: 22px;
+
+}
+
+
+
+.certificate-card {
+
+\&#x20;   background: linear-gradient(145deg,#171b36,#101326);
+
+\&#x20;   border: 1px solid #8178ff44;
+
+\&#x20;   border-radius: 18px;
+
+\&#x20;   overflow: hidden;
+
+\&#x20;   transition: .3s;
+
+\&#x20;   cursor: pointer;
+
+}
+
+
+
+.certificate-card:hover {
+
+\&#x20;   transform: translateY(-8px);
+
+\&#x20;   border-color: #8b83ff;
+
+\&#x20;   box-shadow: 0 10px 35px #5145ff33;
+
+}
+
+
+
+.certificate-card img {
+
+\&#x20;   width: 100%;
+
+\&#x20;   height: 190px;
+
+\&#x20;   object-fit: contain;
+
+\&#x20;   background: #11152a;
+
+\&#x20;   padding: 10px;
+
+\&#x20;   display: block;
+
+\&#x20;   transition: .3s;
+
+}
+
+
+
+.certificate-card:hover img {
+
+\&#x20;   transform: scale(1.04);
+
+}
+
+
+
+.certificate-info {
+
+\&#x20;   padding: 17px;
+
+\&#x20;   text-align: center;
+
+}
+
+
+
+.certificate-info h3 {
+
+\&#x20;   color: #a9a2ff;
+
+\&#x20;   font-size: 16px;
+
+\&#x20;   margin-bottom: 8px;
+
+}
+
+
+
+.certificate-info p {
+
+\&#x20;   color: #a8aecb;
+
+\&#x20;   font-size: 13px;
+
+}
+
+
+
+/\\\* LIGHTBOX \\\*/
+
+.lightbox {
+
+\&#x20;   display: none;
+
+\&#x20;   position: fixed;
+
+\&#x20;   z-index: 100;
+
+\&#x20;   inset: 0;
+
+\&#x20;   background: rgba(0,0,0,.92);
+
+\&#x20;   justify-content: center;
+
+\&#x20;   align-items: center;
+
+\&#x20;   padding: 25px;
+
+}
+
+
+
+.lightbox.active {
+
+\&#x20;   display: flex;
+
+}
+
+
+
+.lightbox img {
+
+\&#x20;   max-width: 95%;
+
+\&#x20;   max-height: 85vh;
+
+\&#x20;   object-fit: contain;
+
+\&#x20;   border-radius: 10px;
+
+\&#x20;   box-shadow: 0 0 35px #7667ff66;
+
+}
+
+
+
+.lightbox-close {
+
+\&#x20;   position: absolute;
+
+\&#x20;   top: 20px;
+
+\&#x20;   right: 30px;
+
+\&#x20;   color: white;
+
+\&#x20;   font-size: 38px;
+
+\&#x20;   background: transparent;
+
+}
+
+
+
+/\\\* CONTACT \\\*/
+
+.contact {
+
+\&#x20;   text-align: center;
+
+\&#x20;   background: radial-gradient(circle,#342b6844,transparent 65%);
+
+}
+
+
+
+.contact .subtitle {
+
+\&#x20;   max-width: 100%;
+
+\&#x20;   width: 100%;
+
+\&#x20;   text-align: center;
+
+\&#x20;   margin-left: auto;
+
+\&#x20;   margin-right: auto;
+
+\&#x20;   display: block;
+
+}
+
+
+
+footer {
+
+\&#x20;   padding: 25px;
+
+\&#x20;   text-align: center;
+
+\&#x20;   color: #9299b8;
+
+\&#x20;   border-top: 1px solid #ffffff15;
+
+}
+
+
+
+\\#message {
+
+\&#x20;   margin-top: 25px;
+
+\&#x20;   color: #00d4ff;
+
+\&#x20;   font-weight: bold;
+
+}
+
+
+
+body.light nav {
+
+\&#x20;   background: rgba(237,241,255,.9);
+
+}
+
+
+
+body.light nav a,
+
+body.light .btn-outline {
+
+\&#x20;   color: #17203b;
+
+}
+
+
+
+body.light .card,
+
+body.light .certificate-card {
+
+\&#x20;   background: white;
+
+}
+
+
+
+body.light .card p,
+
+body.light .about,
+
+body.light .subtitle,
+
+body.light .certificate-info p {
+
+\&#x20;   color: #4b5675;
+
+}
+
+
+
+body.light .card h3,
+
+body.light .certificate-info h3 {
+
+\&#x20;   color: #5145bb;
+
+}
+
+
+
+body.light .certificate-card img {
+
+\&#x20;   background: #edf1ff;
+
+}
+
+
+
+@media(max-width:600px) {
+
+\&#x20;   nav { padding: 16px 5%; }
+
+\&#x20;   nav a { margin-left: 8px; font-size: 11px; }
+
+\&#x20;   .logo { font-size: 16px; }
+
+\&#x20;   section { padding: 75px 6%; }
+
+
+
+\&#x20;   .certificate-grid {
+
+\&#x20;       grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+
+\&#x20;       gap: 12px;
+
+\&#x20;   }
+
+
+
+\&#x20;   .certificate-card img {
+
+\&#x20;       height: 140px;
+
+\&#x20;   }
+
+
+
+\&#x20;   .certificate-info {
+
+\&#x20;       padding: 12px;
+
+\&#x20;   }
+
+
+
+\&#x20;   .certificate-info h3 {
+
+\&#x20;       font-size: 13px;
+
+\&#x20;   }
+
+}
+
+
+</head>
+
+
+
+<body>
+
+
+
+<nav>
+
+&#x20;   <div class="logo">AQ.</div>
+
+&#x20;   <div>
+
+&#x20;       <a href="#home">Home</a>
+
+&#x20;       <a href="#about">About</a>
+
+&#x20;       <a href="#skills">Skills</a>
+
+&#x20;       <a href="#certificates">Sertifikat</a>
+
+&#x20;       <a href="#contact">Contact</a>
+
+&#x20;   </div>
+
+</nav>
+
+
+
+<div class="hero" id="home">
+
+&#x20;   <div class="profile">AQ</div>
+
+&#x20;   <div class="tag">WELCOME TO MY WEBSITE</div>
+
+
+
+&#x20;   <h1>I'm <span>Ahmad Qurthuby</span></h1>
+
+
+
+&#x20;   <p class="subtitle">
+
+&#x20;       Student of TJKT | Technology Enthusiast<br>
+
+&#x20;       Exploring technology, networking, and web development.
+
+&#x20;   </p>
+
+
+
+&#x20;   <div class="actions">
+
+&#x20;       <button class="btn" onclick="kenalan()">
+
+&#x20;           Kenali Saya
+
+&#x20;       </button>
+
+
+
+&#x20;       <a href="#skills">
+
+&#x20;           <button class="btn btn-outline">
+
+&#x20;               Lihat Keahlian
+
+&#x20;           </button>
+
+&#x20;       </a>
+
+&#x20;   </div>
+
+
+
+&#x20;   <div id="message"></div>
+
+</div>
+
+
+
+<section id="about">
+
+&#x20;   <h2 class="section-title">About <span>Me</span></h2>
+
+
+
+&#x20;   <p class="about">
+
+&#x20;       Halo! Saya Ahmad Qurthuby, seorang pelajar jurusan
+
+&#x20;       Teknik Jaringan Komputer dan Telekomunikasi (TJKT).
+
+&#x20;       Saya tertarik dengan dunia teknologi, jaringan komputer,
+
+&#x20;       server, dan pengembangan website.
+
+&#x20;       Website ini merupakan salah satu proyek belajar saya.
+
+&#x20;   </p>
+
+</section>
+
+
+
+<section id="skills">
+
+&#x20;   <h2 class="section-title">My <span>Skills</span></h2>
+
+
+
+&#x20;   <div class="cards">
+
+&#x20;       <div class="card">
+
+&#x20;           <div class="emoji">🌐</div>
+
+&#x20;           <h3>Networking</h3>
+
+&#x20;           <p>Mempelajari IP Address, DHCP, DNS, routing, dan konfigurasi jaringan.</p>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="card">
+
+&#x20;           <div class="emoji">🖥️</div>
+
+&#x20;           <h3>Linux Server</h3>
+
+&#x20;           <p>Mempelajari Debian Server, Apache, SSH, FTP, dan Samba.</p>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="card">
+
+&#x20;           <div class="emoji">💻</div>
+
+&#x20;           <h3>Web Development</h3>
+
+&#x20;           <p>Mengenal HTML, CSS, JavaScript, dan pembuatan website.</p>
+
+&#x20;       </div>
+
+&#x20;   </div>
+
+</section>
+
+
+
+<section id="certificates">
+
+&#x20;   <h2 class="section-title">My <span>Certificates</span></h2>
+
+
+
+&#x20;   <p class="about" style="margin-bottom:35px;">
+
+&#x20;       Beberapa sertifikat dan pencapaian yang pernah saya dapatkan.
+
+&#x20;       Klik gambar untuk melihat ukuran lebih besar.
+
+&#x20;   </p>
+
+
+
+&#x20;   <div class="certificate-grid">
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/eND003Rt.png" alt="Sertifikat 1" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>IMAM LENS</h3>
+
+&#x20;               <p>Sertifikat Penghargaan</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/6sQ64L14.png" alt="Gemini Certified Student K12" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Gemini Certified Student</h3>
+
+&#x20;               <p>Certificate of Achievement</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/FShTX3Px.png" alt="Sertifikat Cybersecurity" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Cybersecurity Foundations</h3>
+
+&#x20;               <p>Certificate of Completion</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/de0EzkBW.png" alt="Cisco Introduction to Cybersecurity" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Cisco Cybersecurity</h3>
+
+&#x20;               <p>Introduction to Cybersecurity</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/CLKlJpnO.png" alt="Piagam Peringkat Nasional" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Peringkat Nasional</h3>
+
+&#x20;               <p>Piagam Penghargaan</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/YkiyI1b6.png" alt="Medali Perak" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Medali Perak</h3>
+
+&#x20;               <p>Indonesia Golden Generation Olympiad</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/g7amq0SW.png" alt="Medali Emas" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Medali Emas</h3>
+
+&#x20;               <p>Olimpiade Pelajar Berprestasi Nusantara</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/aN4cEIth.jpeg" alt="Pocari Sweat Run 3K" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Pocari Sweat Run 3K</h3>
+
+&#x20;               <p>Certificate of Participation</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;       <div class="certificate-card" onclick="bukaSertifikat(this)">
+
+&#x20;           <img src="https://cdn.corenexis.com/f/B35u58tx.jpeg" alt="Computer Training Activities" loading="lazy">
+
+&#x20;           <div class="certificate-info">
+
+&#x20;               <h3>Computer Training</h3>
+
+&#x20;               <p>Certificate of Appreciation</p>
+
+&#x20;           </div>
+
+&#x20;       </div>
+
+
+
+&#x20;   </div>
+
+</section>
+
+
+
+<div class="lightbox" id="lightbox" onclick="tutupSertifikat(event)">
+
+&#x20;   <button class="lightbox-close" onclick="tutupSertifikat(event)">×</button>
+
+&#x20;   <img id="gambarBesar" src="" alt="Sertifikat ukuran besar">
+
+</div>
+
+
+
+<section class="contact" id="contact">
+
+&#x20;   <h2 class="section-title">Let's <span>Connect</span></h2>
+
+
+
+&#x20;   <p class="subtitle">
+
+&#x20;       Terima kasih sudah mengunjungi website saya!
+
+&#x20;   </p>
+
+
+
+&#x20;   <div class="actions">
+
+&#x20;       <button class="btn" onclick="sapa()">
+
+&#x20;           Klik Saya ✨
+
+&#x20;       </button>
+
+
+
+&#x20;       <button class="btn btn-outline" onclick="gantiTema()">
+
+&#x20;           Ganti Tema 🌙
+
+&#x20;       </button>
+
+&#x20;   </div>
+
+
+
+&#x20;   <div id="message2"></div>
+
+</section>
+
+
+
+<footer>
+
+&#x20;   © 2026 Ahmad Qurthuby | Personal Website
+
+&#x20;   <br><br>
+
+&#x20;   Built with HTML, CSS \& JavaScript
+
+</footer>
+
+
+
+<script>
+
+function kenalan() {
+
+\&#x20;   document.getElementById("message").innerHTML =
+
+\&#x20;   "Halo! Senang bertemu dengan kamu 👋";
+
+}
+
+
+
+function sapa() {
+
+\&#x20;   document.getElementById("message2").innerHTML =
+
+\&#x20;   "Terima kasih sudah mampir ke website Ahmad Qurthuby! 🚀";
+
+}
+
+
+
+function gantiTema() {
+
+\&#x20;   document.body.classList.toggle("light");
+
+}
+
+
+
+function bukaSertifikat(kartu) {
+
+\&#x20;   const gambar = kartu.querySelector("img");
+
+\&#x20;   document.getElementById("gambarBesar").src = gambar.src;
+
+\&#x20;   document.getElementById("lightbox").classList.add("active");
+
+}
+
+
+
+function tutupSertifikat(event) {
+
+\&#x20;   if (
+
+\&#x20;       event.target.id === "lightbox" ||
+
+\&#x20;       event.target.classList.contains("lightbox-close")
+
+\&#x20;   ) {
+
+\&#x20;       document.getElementById("lightbox").classList.remove("active");
+
+\&#x20;       document.getElementById("gambarBesar").src = "";
+
+\&#x20;   }
+
+}
+
+
+
+document.addEventListener("keydown", function(event) {
+
+\&#x20;   if (event.key === "Escape") {
+
+\&#x20;       document.getElementById("lightbox").classList.remove("active");
+
+\&#x20;   }
+
+});
+
+
+
+
+</body>
+
+</html>
+
+EOF
